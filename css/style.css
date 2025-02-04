@@ -1,0 +1,753 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* .cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-medium {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cormorant-garamond-semibold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+} */
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 700
+
+.lora-<uniquifier> {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+
+/* TODOS ESTOS SON ESTILOS GENERALES */
+
+/* este H1 es GENERAL para TODOS los TITULOS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* este h2 ES GENERAL para todos */
+h2{
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* Todos los p tienen FUENTE LORA */
+p {
+    font-family: "Lora", serif;
+}
+
+h3 {
+    font-family: "Lora", serif;
+    font-weight: 800;
+}
+
+/* INDEX */
+
+.cuerpoIndex {
+    background-color: black;
+    }
+
+/* cuerpo NAV */
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navegacionUno {
+    display: flex;
+    justify-content: space-between; /* Distribuye elementos */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    height: 100px;
+    background-color: #475D2E;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    font-family: "Cormorant Garamond", serif;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.nav-links {
+    margin-left: auto;
+}
+
+.lista-nav {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se dividan en varias líneas */
+    justify-content: center; /* Centra los elementos en el nav */
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    margin: 10px;
+}
+.lista-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.lista-nav li a:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+/* cuerpo header */
+
+.contenedor-main {
+    position: relative; /* Hace que los elementos internos se posicionen en relación a este */
+    max-width: 100%;
+    height: 600px; /* Ajusta la altura según la necesidad */
+    overflow: hidden; /* Evita que los elementos sobresalgan */
+}
+
+.presentacionImg {
+    width: 100%;
+    height: 100%; /* Hace que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Mantiene la imagen en el fondo */
+}
+
+.tituloAventura {
+    position: absolute;
+    bottom: 120px; /* Lo coloca en la parte inferior de la imagen */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    z-index: 2; /* Se pone encima de la imagen */
+    width: 80%;
+    font-weight: bold;
+}
+
+.contenedor-boton {
+    position: absolute;
+    bottom: 40px; /* Ubica el botón debajo del h2 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Se pone encima de la imagen */
+}
+
+.contenedor-boton button:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    transform: scale(1.05); /* Efecto de ligero zoom */
+    background-color: #5a7639; /* Cambio sutil de color */
+}
+
+
+
+.botonIndex {
+    display: block;
+    width: 289px;
+    height: 51px;
+    padding: 11px 18px;
+    border-radius: 20px;
+    background-color: #003532;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE NAV INICIO */
+
+/* responsive para nav */
+
+@media (max-width: 768px) {
+    .navegacionUno {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .lista-nav {
+        justify-content: center; /* Asegura que los elementos estén bien centrados */
+        gap: 15px;
+        max-width: 100%; /* Permite que se ajuste en pantallas pequeñas */
+    }
+
+    .lista-nav li {
+        flex: 1 1 45%; /* Cada ítem ocupa el 45% del ancho, logrando 2 columnas */
+        text-align: center;
+        max-width: 180px; /* Evita que los elementos sean demasiado anchos */
+    }
+}
+
+@media (max-width: 480px) {
+    .navegacionUno {
+        padding: 10px;
+    }
+
+    .lista-nav {
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .lista-nav li {
+        flex: 1 1 30%; /* Cada ítem ocupa el 30% del ancho, logrando 3 columnas */
+        max-width: 150px; /* Ajusta el tamaño máximo de cada elemento */
+    }
+
+    .lista-nav li a {
+        padding: 8px 0;
+    }
+}
+
+
+
+/* FIN INDEX */
+
+/* inicio ABOUT US */
+
+.bodyAbout {
+        background-image: url(../assets/img/side-wave_background\ 2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat; 
+    }
+
+.navegacionDos {
+    background-color: #003532;
+    font-size: 1.125rem;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+}
+
+/* responsive para navegacionDos */
+
+@media (max-width: 768px) {
+    .navegacionDos {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .lista-nav {
+        justify-content: center; /* Asegura que los elementos estén bien centrados */
+        gap: 15px;
+        max-width: 100%; /* Permite que se ajuste en pantallas pequeñas */
+    }
+
+    .lista-nav li {
+        flex: 1 1 45%; /* Cada ítem ocupa el 45% del ancho, logrando 2 columnas */
+        text-align: center;
+        max-width: 180px; /* Evita que los elementos sean demasiado anchos */
+    }
+}
+
+@media (max-width: 480px) {
+    .navegacionDos {
+        padding: 10px;
+    }
+
+    .lista-nav {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .lista-nav li {
+        flex: 1 1 30%; /* Cada ítem ocupa el 30% del ancho, logrando 3 columnas */
+        max-width: 150px; /* Ajusta el tamaño máximo de cada elemento */
+    }
+
+    .lista-nav li a {
+        padding: 8px 0;
+    }
+}
+
+
+/* fin RESPONSIVE */
+
+/* Continua ABOUT US */
+
+.contenedorAbout {
+    display: flex;
+    justify-content: space-between; /* Separa la tarjeta y la imagen */
+    align-items: center; /* Asegura alineación vertical */
+    gap: 20px;
+    max-width: 1200px; /* Controla el ancho */
+    margin: 0 auto; /* Centra el contenido */
+    padding: 20px;
+}
+.textoAbout{
+    padding: 0px 20px; 
+    margin-left: 10px;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+}
+
+
+.tituloUno {
+    font-size: 4.75rem;
+    margin-top: 0px;
+    color: white;
+    padding: 20px; 
+    margin-left: 10px;
+    
+}
+
+.subtUno {
+    font-size: 2.8125rem ;
+    margin-top: 0%;
+    padding: 0px; 
+    margin-left: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.decoMain {
+    border-style:outset;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px;
+}
+
+/* es la card de info aboutus */
+/* Tarjeta de información */
+.sobreNosotros {
+    border-style: ridge;
+    padding: 20px;
+    border-radius: 41px;
+    background-color: rgba(17, 70, 67, 0.43);
+    width: 50%; /* Ocupa la mitad del contenedor */
+    height: 900px; /* Aumenta la altura para hacerla más grande */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Imagen */
+.imgAbout {
+    width: 50%; /* Ocupa la mitad del contenedor */
+    height: 900px; /* Igual altura que la tarjeta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que la imagen sobresalga */
+}
+
+/* Aplica los estilos directamente a la imagen dentro de .imgAbout */
+.imgAbout img {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 100%; /* Hace que la imagen tenga la misma altura que la tarjeta */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    border-radius: 41px; /* Aplica bordes redondeados */
+}
+
+.tituloAbout {
+    font-size: 4.75rem;
+    margin-top: -80px;
+    color: white;
+    padding: 20px; 
+    text-align: center;
+}
+
+
+
+/* USAR subtUno y tituloUno para que todos 
+los titulos y subtitulos sean iguales */
+
+
+/* USAR textoBlanco CADA VEZ QUE QUIERA 
+PONERLE BLANCO A UN TEXTO como por ejm
+los parrafos */
+
+.textoBlanco {
+    color: white;
+}
+
+/* FIN de About Us */
+
+/* INICIO Destinos y Tours */
+
+
+/* DESTINOS */
+.bodyDestinos {
+    background-image: url(../assets/img/Deg1.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.mainDestinos {
+    width: 100%;
+}
+
+.listaDestino {
+    color: red;
+    font-family: cormorant-garamond-regular; 
+}
+
+/* CARDS ESTILOS */
+
+.card {
+    display: grid; /*APLICAMOS GRIDS AL CONTENEDOR */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 20px; 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* Contenedor de cards */
+.cardDestino {
+    font-family: "Lora", serif;
+    border-style: groove;
+    width: 100%; 
+    max-width: 300px; 
+    height: 450px; 
+    background-color: white;
+    margin: 20px;
+    text-align: center;
+    border-radius: 63px; 
+    overflow: hidden; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* RESPONSIVE PARA LAS CARDS */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas  */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
+
+.cardDestino img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.cardDestino h3,
+.cardDestino span {
+    position: absolute; /* Absolute hace que el texto quede arriba de la imagen*/
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* AJUSTE DE LOS TEXTOS DE cards DESTINOS*/
+.cardDestino h3 {
+    top: 30px; 
+    font-size: 1.8rem;
+}
+
+.cardDestino span {
+    bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.cardDestino:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05); 
+    opacity: 0.9; 
+}
+
+/* FIN DESTINOS
+
+INICIO DE TOURS */
+
+.bodyTours{
+    background-image: url(../assets/img/Deg2.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+
+
+.contenedorCards {
+    display: grid; /*APLICAMOS GRIDS AL CONTENEDOR */
+    grid-template-columns: repeat(3, 1fr); /* 4 columnas iguales */
+    gap: 20px; 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+
+}
+
+
+/* cards individuales */
+.cardTours {
+    display: flex; 
+    flex-direction: column; /* Imagen arriba, texto abajo */
+    background-color: white;
+    font-family: "Lora", serif;
+    border: 1px solid #ccc;
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    height: 500px; 
+    width: 100%; 
+    border-radius: 20px;
+
+}
+
+.cardTours:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); 
+    opacity: 0.9; 
+}
+
+.cardTours .imagen {
+    width: 100%;
+    height: 60%; 
+}
+
+.cardTours .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.cardTours .contenidoTours {
+    width: 100%;
+    height: 55%; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.textoTours {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: "Lora", serif;
+    color: white;
+    padding: 30px; 
+    text-align: center;
+    margin: 20px auto; 
+    max-width: 1100px; 
+    line-height: 1.6; 
+}
+
+.list-tours {
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.tituloCard {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE TOURS */
+
+@media (max-width: 768px) {
+    .contenedorCards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+
+    .cardTours {
+        height: 480px; 
+    }
+
+    .cardTours .contenidoTours {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedorCards {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+
+    .cardTours {
+        height: auto; 
+    }
+
+    .cardTours .contenidoTours {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .tituloCard {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* todos los elementos dentro de la sección
+ estan centrados por el display flex y align-items: center
+ IMPORTANTE el margin para centrar horizontalmente. */
+
+/* FIN Destinos y Tour */
+
+/* Inicio CONTACTO */
+
+.bodyTres {
+    font-family: 'Lora', serif;
+    background-image: url(../assets/img/backg-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    color: white;
+}
+
+.listaContacto {
+    font-family: "Lora", serif;
+    font-size: 1rem;
+}
+
+.pagContacto {
+    font-size: 16px;
+    font-family: "Lora", serif;
+}
+
+.contenedorContac {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.contenedorForm {
+    width: 50%;
+    text-align: left;
+}
+
+.listaContacto {
+    margin-bottom: 20px;
+}
+
+.listaContacto label {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.listaContacto input {
+    width: 425px;
+    height: 48px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#mensaje {
+    height: 195px;
+}
+
+#terminos {
+    width: 15px;
+    height: 15px;
+}
+
+input[type="submit"] {
+    width: 200px; 
+    font-size: 12px; 
+    padding: 5px 10px; 
+}
+
+.modifImagen {
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-left: 30px; /
+}
+
+
+.modifImagen {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.footer-cont {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.contenedFoot {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.pagContacto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pagContacto li {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.pagContact a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    margin-right: 15px;
+}
